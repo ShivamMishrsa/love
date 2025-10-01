@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Proposal</title>
+    <style>
+        body {
+            margin: 0;
+            font-family: 'Arial', sans-serif;
+            background: linear-gradient(to bottom right, #ff9a9e, #fad0c4), url('https://cdn.pixabay.com/photo/2016/11/29/03/20/roses-1867322_1280.jpg') no-repeat center center fixed;
+            background-size: cover;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            color: #fff;
+            text-align: center;
+        }
+
+        .proposal-container {
+            background: rgba(0, 0, 0, 0.7);
+            padding: 30px;
+            border-radius: 15px;
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+            animation: fadeIn 2s ease-in-out;
+        }
+
+        h1 {
+            font-size: 2.5rem;
+            margin-bottom: 20px;
+        }
+
+        p {
+            font-size: 1.2rem;
+            margin-bottom: 30px;
+        }
+
+        .proposal-btn {
+            background-color: #ff6f61;
+            border: none;
+            padding: 15px 30px;
+            font-size: 1.2rem;
+            color: #fff;
+            border-radius: 30px;
+            cursor: pointer;
+            transition: background-color 0.3s ease, transform 0.3s ease;
+        }
+
+        .proposal-btn:hover {
+            background-color: #e55b50;
+            transform: scale(1.1);
+        }
+
+        .heart {
+            font-size: 5rem;
+            color: #ff6f61;
+            animation: heartbeat 1.5s infinite;
+            margin-bottom: 20px;
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: scale(0.9);
+            }
+            to {
+                opacity: 1;
+                transform: scale(1);
+            }
+        }
+
+        @keyframes heartbeat {
+            0%, 100% {
+                transform: scale(1);
+            }
+            50% {
+                transform: scale(1.2);
+            }
+        }
+
+        .music {
+            margin-top: 20px;
+        }
+
+        .music button {
+            background-color: #4caf50;
+            border: none;
+            padding: 10px 20px;
+            font-size: 1rem;
+            color: #fff;
+            border-radius: 20px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        .music button:hover {
+            background-color: #45a049;
+        }
+
+        .note {
+            display: none;
+            margin-top: 20px;
+            font-size: 1.5rem;
+            color: #ffd700;
+            animation: fadeIn 2s ease-in-out;
+        }
+    </style>
+</head>
+<body>
+    <div class="proposal-container">
+        <div class="heart">❤️</div>
+        <h1>Will You Be Mine Forever?</h1>
+        <p>You make my world brighter, and I can't imagine my life without you.</p>
+        <button class="proposal-btn" onclick="showNote()">Yes, I Will!</button>
+        <div class="music">
+            <button onclick="playMusic()">Play Romantic Music</button>
+        </div>
+        <div class="note" id="acceptNote">Thank you for making my dreams come true! 💖</div>
+    </div>
+
+    <audio id="romanticMusic" src="https://www.bensound.com/bensound-music/bensound-romantic.mp3"></audio>
+
+    <script>
+        function playMusic() {
+            const music = document.getElementById('romanticMusic');
+            if (music.paused) {
+                music.play();
+            } else {
+                music.pause();
+            }
+        }
+
+        function showNote() {
+            document.getElementById('acceptNote').style.display = 'block';
+            alert('She said YES! 🎉');
+        }
+    </script>
+</body>
+</html>
